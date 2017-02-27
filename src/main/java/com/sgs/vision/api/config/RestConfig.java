@@ -17,14 +17,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.sgs.vision.api.interceptor.AccessTokenAuthInterceptor;
-import com.sgs.vision.api.interceptor.RefreshTokenAuthInterceptor;
-import com.sgs.vision.api.interceptor.UrlLoggerInterceptor;
 
 
 @Configuration
