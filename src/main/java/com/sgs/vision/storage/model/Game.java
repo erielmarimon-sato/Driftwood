@@ -34,18 +34,6 @@ public class Game {
     public void setDate(Date date) {
         this.date = date;
     }
-    public List<ObjectId> getTeamOne() {
-        return teamOne;
-    }
-    public void setTeamOne(List<ObjectId> teamOne) {
-        this.teamOne = teamOne;
-    }
-    public List<ObjectId> getTeamTwo() {
-        return teamTwo;
-    }
-    public void setTeamTwo(List<ObjectId> teamTwo) {
-        this.teamTwo = teamTwo;
-    }
     public Integer getTeamOneScore() {
         return teamOneScore;
     }
@@ -58,11 +46,24 @@ public class Game {
     public void setTeamTwoScore(Integer teamTwoScore) {
         this.teamTwoScore = teamTwoScore;
     }
-    public ObjectId getmVP() {
-        return mVP;
+
+    public String getGameType() {
+        return gameType;
     }
-    public void setmVP(ObjectId mVP) {
-        this.mVP = mVP;
+    public void setGameType(String gameType) {
+        this.gameType = gameType;
+    }
+    public List<ObjectId> getTeamOne() {
+        return teamOne;
+    }
+    public void setTeamOne(List<ObjectId> teamOne) {
+        this.teamOne = teamOne;
+    }
+    public List<ObjectId> getTeamTwo() {
+        return teamTwo;
+    }
+    public void setTeamTwo(List<ObjectId> teamTwo) {
+        this.teamTwo = teamTwo;
     }
     public List<ObjectId> getPlayers() {
         return players;
@@ -70,10 +71,10 @@ public class Game {
     public void setPlayers(List<ObjectId> players) {
         this.players = players;
     }
-    public String getGameType() {
-        return gameType;
+    public ObjectId getmVP() {
+        return mVP;
     }
-    public void setGameType(String gameType) {
-        this.gameType = gameType;
+    public void setmVP(ObjectId mVP) {
+        this.mVP = mVP;
     }
 }

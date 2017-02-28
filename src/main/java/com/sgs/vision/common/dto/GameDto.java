@@ -7,19 +7,18 @@ import org.bson.types.ObjectId;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.sgs.vision.storage.model.Player;
 
 @JsonInclude(Include.NON_NULL)
 public class GameDto {
     private String _id;
     private Date date;
-    private List<Player> teamOne;
-    private List<Player> teamTwo;
-    private List<ObjectId> players;
+    private List<String> teamOne;
+    private List<String> teamTwo;
+    private List<String> players;
     private Integer teamOneScore;
     private Integer teamTwoScore;
 //    private List<ScoreDetails> scores;
-    private Player mVP;
+    private String mVP;
     private String gameType;
     
     public String get_id() {
@@ -34,22 +33,11 @@ public class GameDto {
     public void setDate(Date date) {
         this.date = date;
     }
-    public List<Player> getTeamOne() {
-        return teamOne;
-    }
-    public void setTeamOne(List<Player> teamOne) {
-        this.teamOne = teamOne;
-    }
-    public List<Player> getTeamTwo() {
-        return teamTwo;
-    }
-    public void setTeamTwo(List<Player> teamTwo) {
-        this.teamTwo = teamTwo;
-    }
-    public List<ObjectId> getPlayers() {
+ 
+    public List<String> getPlayers() {
         return players;
     }
-    public void setPlayers(List<ObjectId> players) {
+    public void setPlayers(List<String> players) {
         this.players = players;
     }
     public Integer getTeamOneScore() {
@@ -64,16 +52,30 @@ public class GameDto {
     public void setTeamTwoScore(Integer teamTwoScore) {
         this.teamTwoScore = teamTwoScore;
     }
-    public Player getmVP() {
-        return mVP;
-    }
-    public void setmVP(Player mVP) {
-        this.mVP = mVP;
-    }
+    
     public String getGameType() {
         return gameType;
     }
     public void setGameType(String gameType) {
         this.gameType = gameType;
     }
+    public List<String> getTeamOne() {
+        return teamOne;
+    }
+    public void setTeamOne(List<String> teamOne) {
+        this.teamOne = teamOne;
+    }
+    public List<String> getTeamTwo() {
+        return teamTwo;
+    }
+    public void setTeamTwo(List<String> teamTwo) {
+        this.teamTwo = teamTwo;
+    }
+    public String getmVP() {
+        return mVP;
+    }
+    public void setmVP(String mVP) {
+        this.mVP = mVP;
+    }
+    
 }
