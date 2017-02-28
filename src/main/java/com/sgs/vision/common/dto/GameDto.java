@@ -1,50 +1,56 @@
-package com.sgs.vision.storage.model;
+package com.sgs.vision.common.dto;
 
 import java.util.Date;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="games")
-public class Game {
-    @Id
-    private ObjectId id;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.sgs.vision.storage.model.Player;
+
+@JsonInclude(Include.NON_NULL)
+public class GameDto {
+    private String _id;
     private Date date;
-    private List<ObjectId> teamOne;
-    private List<ObjectId> teamTwo;
+    private List<Player> teamOne;
+    private List<Player> teamTwo;
     private List<ObjectId> players;
     private Integer teamOneScore;
     private Integer teamTwoScore;
-//    private List<ScoreDetails> details; // a class for the details of the score, each ScoreDetails is about one goal
-    private ObjectId mVP;
+//    private List<ScoreDetails> scores;
+    private Player mVP;
     private String gameType;
     
-    
-    public ObjectId getId(){
-        return id;
+    public String get_id() {
+        return _id.toString();
     }
-//    public void setId(ObjectId id){
-//      this.id = id;    
-//    }
+    public void set_id(ObjectId _id) {
+        this._id = _id.toString();
+    }
     public Date getDate() {
         return date;
     }
     public void setDate(Date date) {
         this.date = date;
     }
-    public List<ObjectId> getTeamOne() {
+    public List<Player> getTeamOne() {
         return teamOne;
     }
-    public void setTeamOne(List<ObjectId> teamOne) {
+    public void setTeamOne(List<Player> teamOne) {
         this.teamOne = teamOne;
     }
-    public List<ObjectId> getTeamTwo() {
+    public List<Player> getTeamTwo() {
         return teamTwo;
     }
-    public void setTeamTwo(List<ObjectId> teamTwo) {
+    public void setTeamTwo(List<Player> teamTwo) {
         this.teamTwo = teamTwo;
+    }
+    public List<ObjectId> getPlayers() {
+        return players;
+    }
+    public void setPlayers(List<ObjectId> players) {
+        this.players = players;
     }
     public Integer getTeamOneScore() {
         return teamOneScore;
@@ -58,17 +64,11 @@ public class Game {
     public void setTeamTwoScore(Integer teamTwoScore) {
         this.teamTwoScore = teamTwoScore;
     }
-    public ObjectId getmVP() {
+    public Player getmVP() {
         return mVP;
     }
-    public void setmVP(ObjectId mVP) {
+    public void setmVP(Player mVP) {
         this.mVP = mVP;
-    }
-    public List<ObjectId> getPlayers() {
-        return players;
-    }
-    public void setPlayers(List<ObjectId> players) {
-        this.players = players;
     }
     public String getGameType() {
         return gameType;

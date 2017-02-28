@@ -12,15 +12,15 @@ import com.sgs.vision.common.dto.JsonResponse;
 @RestController
 @RequestMapping("games")
 public class GameController {
-    @Autowired private GameService gameService;
+//    @Autowired private GameService gameService;
     
-    public JsonResponse create(@RequestParam(required=true) String[] playerIds,
-            @RequestParam(required=false) String gameType){
-        
-        JsonResponse response = new JsonResponse();
-        response.setData(Converter.game(
-                gameService.createGame(playerIds, gameType)));
-        return response;
-    }
+//    public JsonResponse create(@RequestParam(required=true) String[] playerIds,
+//            @RequestParam(required=false) String gameType){
+//        
+//        JsonResponse response = new JsonResponse();
+//        response.setData(Converter.game(
+//                gameService.createGame(playerIds, gameType)));
+//        return response;
+//    }
     
 }
