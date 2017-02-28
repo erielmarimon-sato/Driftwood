@@ -77,4 +77,12 @@ public class Converter {
         
         return game;
     }
+
+    public static List<GameDto> games(List<Game> games) throws Exception {
+        List<GameDto> mGames = new ArrayList<>();
+        for(Game g : games){
+            mGames.add(game(g));
+        }
+        return mGames;
+    }
 }

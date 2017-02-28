@@ -30,8 +30,6 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
     
     private static Logger logger = LogManager.getLogger(PlayerRepositoryImpl.class.getName());
     
-    
-    
     @Override
     public PlayerDto findByPlayerId(String id) {
         List<AggregationOperation> criteria = new ArrayList<>();

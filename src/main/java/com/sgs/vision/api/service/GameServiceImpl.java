@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sgs.vision.common.dto.GameDto;
 import com.sgs.vision.storage.model.Game;
 import com.sgs.vision.storage.repository.GameRepository;
 
@@ -35,6 +36,11 @@ public class GameServiceImpl implements GameService{
         newGame.setGameType(gameType);
         
         return gameRepository.save(newGame);
+    }
+
+    @Override
+    public List<Game> getGames(Date date) {
+        return gameRepository.search(date);
     }
 
 }
