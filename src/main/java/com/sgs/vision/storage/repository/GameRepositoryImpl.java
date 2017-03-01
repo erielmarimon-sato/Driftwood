@@ -5,18 +5,23 @@ import static org.springframework.data.mongodb.core.aggregation.Aggregation.matc
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.aggregation.TypedAggregation;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import com.sgs.vision.common.dto.GameDto;
-import com.sgs.vision.common.dto.PlayerDto;
 import com.sgs.vision.storage.model.Game;
 
 public class GameRepositoryImpl implements GameRepositoryCustom{
@@ -43,4 +48,20 @@ public class GameRepositoryImpl implements GameRepositoryCustom{
         return result.getMappedResults();
     }
 
+    @Override
+    public Game addPlayersToGame(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        Update update = new Update();
+        update.pushAll("players", playerIds);
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
 }

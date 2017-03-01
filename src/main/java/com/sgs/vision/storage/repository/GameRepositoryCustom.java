@@ -10,4 +10,6 @@ public interface GameRepositoryCustom {
     GameDto findById(String id);
     
     List<Game> search(Date date);
+    
+    Game addPlayersToGame(String gameId, String[] playerIds);
 }

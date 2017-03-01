@@ -12,4 +12,6 @@ public interface GameService {
 
     List<Game> getGames(Date date);
 
+    Game addPlayers(String gameId, String[] playerIds);
+
 }

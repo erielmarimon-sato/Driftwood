@@ -43,4 +43,10 @@ public class GameServiceImpl implements GameService{
         return gameRepository.search(date);
     }
 
+    @Override
+    public Game addPlayers(String gameId, String[] playerIds) {
+        
+        return gameRepository.addPlayersToGame(gameId, playerIds);
+    }
+
 }

@@ -81,9 +81,7 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
                 update, 
                 new FindAndModifyOptions().returnNew(true), 
                 Player.class);
-        
-        System.out.println("Finish update for " + player.getUsername());
-        
+                
         return player;
     }
     
