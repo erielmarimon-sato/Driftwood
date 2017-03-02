@@ -49,4 +49,14 @@ public class GameServiceImpl implements GameService{
         return gameRepository.addPlayersToGame(gameId, playerIds);
     }
 
+    @Override
+    public Game addPlayersTeamOne(String gameId, String[] playerIds) {
+        return gameRepository.addPlayersTeamOne(gameId, playerIds);
+    }
+    
+    @Override
+    public Game addPlayersTeamTwo(String gameId, String[] playerIds) {
+        return gameRepository.addPlayersTeamTwo(gameId, playerIds);
+    }
+
 }

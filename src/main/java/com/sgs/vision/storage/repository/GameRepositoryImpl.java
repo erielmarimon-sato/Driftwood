@@ -53,8 +53,57 @@ public class GameRepositoryImpl implements GameRepositoryCustom{
         Query query = new Query();
         query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
         
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
         Update update = new Update();
-        update.pushAll("players", playerIds);
+        update.pushAll("players", oIds);
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
+
+    @Override
+    public Game addPlayersTeamOne(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
+        Update update = new Update();
+        update.pushAll("teamOne", oIds);
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
+    
+    @Override
+    public Game addPlayersTeamTwo(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
+        Update update = new Update();
+        update.pushAll("teamTwo", oIds);
         
         Game game = mongoTemplate.findAndModify(
                 query, 

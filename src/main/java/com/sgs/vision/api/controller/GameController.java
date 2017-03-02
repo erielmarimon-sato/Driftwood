@@ -19,6 +19,30 @@ import com.sgs.vision.storage.model.Game;
 public class GameController {
     @Autowired private GameService gameService;
     
+    @RequestMapping(value = "/players/teamTwo", method = RequestMethod.PUT)
+    public JsonResponse addPlayersTeamTwo(@RequestParam(required=true) String gameId,
+            @RequestParam(required=true) String[] playerIds) throws Exception{
+        
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.addPlayersTeamTwo(gameId, playerIds)));
+        
+        return response;
+    }
+    
+    @RequestMapping(value = "/players/teamOne", method = RequestMethod.PUT)
+    public JsonResponse addPlayersTeamOne(@RequestParam(required=true) String gameId,
+            @RequestParam(required=true) String[] playerIds) throws Exception{
+        
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.addPlayersTeamOne(gameId, playerIds)));
+        
+        return response;
+    }
+    
     @RequestMapping(value = "/players", method = RequestMethod.PUT)
     public JsonResponse addPlayers(@RequestParam(required=true) String gameId,
             @RequestParam(required=true) String[] playerIds) throws Exception{

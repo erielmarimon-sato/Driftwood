@@ -12,4 +12,8 @@ public interface GameRepositoryCustom {
     List<Game> search(Date date);
     
     Game addPlayersToGame(String gameId, String[] playerIds);
+    
+    Game addPlayersTeamOne(String gameId, String[] playerIds);
+    
+    Game addPlayersTeamTwo(String gameId, String[] playerIds);
 }

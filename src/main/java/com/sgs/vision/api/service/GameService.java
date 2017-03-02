@@ -14,4 +14,8 @@ public interface GameService {
 
     Game addPlayers(String gameId, String[] playerIds);
 
+    Game addPlayersTeamOne(String gameId, String[] playerIds);
+    
+    Game addPlayersTeamTwo(String gameId, String[] playerIds);
+
 }
