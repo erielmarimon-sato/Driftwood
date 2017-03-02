@@ -27,12 +27,6 @@ import com.sgs.vision.storage.model.Game;
 public class GameRepositoryImpl implements GameRepositoryCustom{
     
     @Autowired private MongoTemplate mongoTemplate;
-    
-    @Override
-    public GameDto findById(String id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     @Override
     public List<Game> search(Date date) {

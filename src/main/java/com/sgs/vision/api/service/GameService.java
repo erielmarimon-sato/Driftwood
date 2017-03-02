@@ -12,6 +12,8 @@ public interface GameService {
 
     List<Game> getGames(Date date);
 
+    Game getGame(String gameId);
+    
     Game addPlayers(String gameId, String[] playerIds);
 
     Game addPlayersTeamOne(String gameId, String[] playerIds);

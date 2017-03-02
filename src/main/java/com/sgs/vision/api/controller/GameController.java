@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -98,6 +99,13 @@ public class GameController {
         JsonResponse response = new JsonResponse();
         response.setData(Converter.game(
                 gameService.createGame(playerIds, gameType)));
+        return response;
+    }
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public JsonResponse getGame(@PathVariable String id) throws Exception{
+        JsonResponse response = new JsonResponse();
+        response.setData(Converter.game(gameService.getGame(id)));
         return response;
     }
     

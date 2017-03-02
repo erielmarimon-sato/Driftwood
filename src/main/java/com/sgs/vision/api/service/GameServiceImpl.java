@@ -44,6 +44,11 @@ public class GameServiceImpl implements GameService{
     }
 
     @Override
+    public Game getGame(String gameId) {
+        return gameRepository.findById(gameId);
+    }
+    
+    @Override
     public Game addPlayers(String gameId, String[] playerIds) {	
         
         return gameRepository.addPlayersToGame(gameId, playerIds);
@@ -75,5 +80,7 @@ public class GameServiceImpl implements GameService{
     public Game removePlayersTeamOne(String gameId, String[] playerIds) {
         return gameRepository.removePlayersTeamOne(gameId, playerIds);
     }
+
+    
 
 }
