@@ -177,4 +177,32 @@ public class GameRepositoryImpl implements GameRepositoryCustom{
         
         return game;
     }
+
+    
+    @Override
+    public Game updateGame(
+            String id, 
+            Date date, 
+            Integer teamOneScore, 
+            Integer teamTwoScore, 
+            String mVP, 
+            String gameType) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(id)));
+        
+        Update update = new Update();
+        if(date != null){update.set("date", date);}
+        if(teamOneScore != null){update.set("teamOneScore", teamOneScore);}
+        if(teamTwoScore != null){update.set("teamTwoScore", teamTwoScore);}
+        if(mVP != null){update.set("mVP", new ObjectId(mVP));}
+        if(gameType != null){update.set("gameType", gameType);}
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game; 
+    }
 }

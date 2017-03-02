@@ -82,5 +82,19 @@ public class GameServiceImpl implements GameService{
     }
 
     
+    @Override
+    public Game updateGame(
+            String id, 
+            Date date, 
+            Integer teamOneScore, 
+            Integer teamTwoScore, 
+            String mVP, 
+            String gameType) {
+        
+        return gameRepository.updateGame(id,date,teamOneScore,
+                teamTwoScore,mVP,gameType);
+    }
+
+    
 
 }

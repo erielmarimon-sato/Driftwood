@@ -21,4 +21,7 @@ public interface GameRepositoryCustom {
     Game removePlayersTeamTwo(String gameId, String[] playerIds);
 
     Game removePlayersTeamOne(String gameId, String[] playerIds);
+    
+    Game updateGame(String id, Date date, Integer teamOneScore, 
+            Integer teamTwoScore, String mVP, String gameType);
 }

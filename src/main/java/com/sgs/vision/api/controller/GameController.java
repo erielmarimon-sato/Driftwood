@@ -20,6 +20,22 @@ import com.sgs.vision.storage.model.Game;
 public class GameController {
     @Autowired private GameService gameService;
     
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public JsonResponse update(@PathVariable String id,
+            @RequestParam(required = false) Date date,
+            @RequestParam(required = false) Integer teamOneScore,
+            @RequestParam(required = false) Integer teamTwoScore,
+            @RequestParam(required = false) String mVP,
+            @RequestParam(required = false) String gameType) throws Exception{
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.updateGame(id,date,teamOneScore,
+                        teamTwoScore,mVP,gameType)));
+        
+        return response;
+    }
+    
     @RequestMapping(value = "/players/teamTwo", method = RequestMethod.DELETE)
     public JsonResponse removePlayersTeamTwo(@RequestParam(required=true) String gameId,
             @RequestParam(required=true) String[] playerIds) throws Exception{
