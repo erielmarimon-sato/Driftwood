@@ -113,4 +113,74 @@ public class GameRepositoryImpl implements GameRepositoryCustom{
         
         return game;
     }
+
+    
+    @Override
+    public Game removePlayers(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
+        Update update = new Update();
+        update.pullAll("players", oIds);
+        
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
+
+
+    @Override
+    public Game removePlayersTeamTwo(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
+        Update update = new Update();
+        update.pullAll("teamTwo", oIds);
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
+
+    
+    @Override
+    public Game removePlayersTeamOne(String gameId, String[] playerIds) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(new ObjectId(gameId)));
+        
+        ObjectId[] oIds = new ObjectId[playerIds.length];
+        for(int i = 0; i < oIds.length; i++){
+            oIds[i] = new ObjectId(playerIds[i]);
+        }
+        
+        Update update = new Update();
+        update.pullAll("teamOne", oIds);
+        
+        Game game = mongoTemplate.findAndModify(
+                query, 
+                update,
+                new FindAndModifyOptions().returnNew(true),
+                Game.class);
+        
+        return game;
+    }
 }

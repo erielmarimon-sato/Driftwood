@@ -19,6 +19,42 @@ import com.sgs.vision.storage.model.Game;
 public class GameController {
     @Autowired private GameService gameService;
     
+    @RequestMapping(value = "/players/teamTwo", method = RequestMethod.DELETE)
+    public JsonResponse removePlayersTeamTwo(@RequestParam(required=true) String gameId,
+            @RequestParam(required=true) String[] playerIds) throws Exception{
+        
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.removePlayersTeamTwo(gameId, playerIds)));
+        
+        return response;
+    }
+    
+    @RequestMapping(value = "/players/teamOne", method = RequestMethod.DELETE)
+    public JsonResponse removePlayersTeamOne(@RequestParam(required=true) String gameId,
+            @RequestParam(required=true) String[] playerIds) throws Exception{
+        
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.removePlayersTeamOne(gameId, playerIds)));
+        
+        return response;
+    }
+    
+    @RequestMapping(value = "/players", method = RequestMethod.DELETE)
+    public JsonResponse removePlayers(@RequestParam(required=true) String gameId,
+            @RequestParam(required=true) String[] playerIds) throws Exception{
+        
+        JsonResponse response = new JsonResponse();
+        
+        response.setData(Converter.game(
+                gameService.removePlayers(gameId, playerIds)));
+        
+        return response;
+    }
+    
     @RequestMapping(value = "/players/teamTwo", method = RequestMethod.PUT)
     public JsonResponse addPlayersTeamTwo(@RequestParam(required=true) String gameId,
             @RequestParam(required=true) String[] playerIds) throws Exception{

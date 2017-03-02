@@ -16,4 +16,10 @@ public interface GameRepositoryCustom {
     Game addPlayersTeamOne(String gameId, String[] playerIds);
     
     Game addPlayersTeamTwo(String gameId, String[] playerIds);
+    
+    Game removePlayers(String gameId, String[] playerIds);
+    
+    Game removePlayersTeamTwo(String gameId, String[] playerIds);
+
+    Game removePlayersTeamOne(String gameId, String[] playerIds);
 }
