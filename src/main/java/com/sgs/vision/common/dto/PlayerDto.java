@@ -94,8 +94,8 @@ public class PlayerDto {
     public String get_id() {
         return _id.toString();
     }
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public void set_id(ObjectId id) {
+        this._id = id;
     }
     public boolean isActive() {
         return active;

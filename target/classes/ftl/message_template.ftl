@@ -1,1 +1,0 @@
-{"jsonrpc":"2.0","method":"inventory_event","params":{"sent_on":${model.timestamp?c},"data":[{"facility_id":"${model.facilityId}","epc_code":"${model.epc}","tid":null,"epc_encode_format":"tbd","event_type":"${model.eventType}","timestamp":${model.timestamp?c},"location":"${model.reader}"}]}}

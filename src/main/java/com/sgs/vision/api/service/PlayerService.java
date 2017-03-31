@@ -12,7 +12,7 @@ public interface PlayerService {
     Player createPlayer(String name, String username, String password) 
             throws DuplicatedUserException;
 
-    List<PlayerDto> getPlayers(boolean active);
+    List<PlayerDto> getPlayers(String name, String username, boolean active);
 
     PlayerDto getPlayer(String id) throws Exception;
 

@@ -1,6 +1,7 @@
 package com.sgs.vision.storage.repository;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.match;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.project;
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
 
 import java.util.ArrayList;
@@ -20,7 +21,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-import com.sgs.vision.api.util.Converter;
 import com.sgs.vision.common.dto.PlayerDto;
 import com.sgs.vision.storage.model.Player;
 
@@ -42,9 +42,15 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
     }
 
     @Override
-    public List<PlayerDto> search(boolean active) {
+    public List<PlayerDto> search(String name, String username, boolean active) {
         List<AggregationOperation> criteria = new ArrayList<>();
         
+        if(name != null){
+	    		criteria.add(match(Criteria.where("name").regex(name,"i")));
+	    }
+        if(username != null){
+        		criteria.add(match(Criteria.where("username").regex(username,"i")));
+	    }
         criteria.add(match(Criteria.where("active").is(active)));
         
         TypedAggregation<Player> aggregation = newAggregation(Player.class,criteria);

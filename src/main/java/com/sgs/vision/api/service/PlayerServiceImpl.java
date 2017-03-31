@@ -35,9 +35,9 @@ public class PlayerServiceImpl implements PlayerService{
     }
 
     @Override
-    public List<PlayerDto> getPlayers(boolean active) {
+    public List<PlayerDto> getPlayers(String name, String username, boolean active) {
         // TODO Auto-generated method stub
-        List<PlayerDto> players = playerRepository.search(active);
+        List<PlayerDto> players = playerRepository.search(name, username, active);
         return players;
     }
 

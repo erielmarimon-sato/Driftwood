@@ -8,7 +8,7 @@ import com.sgs.vision.storage.model.Player;
 public interface PlayerRepositoryCustom {
     PlayerDto findByPlayerId(String id);
     
-    List<PlayerDto> search(boolean active);
+    List<PlayerDto> search(String name, String username, boolean active);
     
     Player updatePlayer(String id, String name, String username, String totalGoals, String assists,
             String totalGames, String effectiveness, String lastDayPlayed);

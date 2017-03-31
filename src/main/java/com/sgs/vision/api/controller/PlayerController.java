@@ -64,12 +64,14 @@ public class PlayerController {
      * @return a list of players
      */
     @RequestMapping(method = RequestMethod.GET)
-    public JsonResponse getPlayers(@RequestParam(required=true, defaultValue="true")
-                                boolean active){
-        JsonResponse response = new JsonResponse();
-        List<PlayerDto> players = playerService.getPlayers(active);
-        response.setData(players);
-        return response;
+    public JsonResponse getPlayers(
+    		@RequestParam(required=false) String name,
+    		@RequestParam(required=false) String username,
+    		@RequestParam(required=true, defaultValue="true") boolean active){
+	        JsonResponse response = new JsonResponse();
+	        List<PlayerDto> players = playerService.getPlayers(name, username, active);
+	        response.setData(players);
+	        return response;
     }
     
     /**
