@@ -25,9 +25,11 @@ public class Game {
     public ObjectId getId(){
         return id;
     }
+    
 //    public void setId(ObjectId id){
 //      this.id = id;    
 //    }
+    
     public Date getDate() {
         return date;
     }

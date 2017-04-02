@@ -15,6 +15,7 @@ public class Player {
 //    @Indexed(unique=true)
     private String username;
     private String password;
+    private ObjectId groupId;
     private Integer totalGoals;
     private Integer totalAssists;
     private Integer noShow;
@@ -122,6 +123,14 @@ public class Player {
     
     public void setActive(boolean active) {
         this.active = active;
-    }    
+    }
+
+	public ObjectId getGroup() {
+		return groupId;
+	}
+
+	public void setGroup(ObjectId group) {
+		this.groupId = group;
+	}    
     
 }

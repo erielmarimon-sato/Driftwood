@@ -16,6 +16,7 @@ public class PlayerDto {
     private String name;
     private String username;
     private String password;
+    private ObjectId groupId;
     private Integer totalGoals;
     private Integer totalAssists;
     private Integer noShow;
@@ -103,4 +104,11 @@ public class PlayerDto {
     public void setActive(boolean active) {
         this.active = active;
     }
+	public String getGroupId() {
+		return groupId.toString();
+	}
+	public void setGroupId(ObjectId groupId) {
+		this.groupId = groupId;
+	}
+
 }

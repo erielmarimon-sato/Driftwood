@@ -10,12 +10,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sgs.vision.api.service.PlayerService;
 import com.sgs.vision.common.dto.GameDto;
+import com.sgs.vision.common.dto.GroupDto;
 import com.sgs.vision.common.dto.PlayerDto;
 import com.sgs.vision.storage.model.Game;
+import com.sgs.vision.storage.model.Group;
 import com.sgs.vision.storage.model.Player;
 
 public class Converter {
     
+	public static GroupDto group(Group group){
+		GroupDto dto = new GroupDto();
+		dto.set_id(group.getId().toString());
+		dto.setAdmin(group.getAdmin().toString());
+		dto.setDateCreated(group.getDateCreated());
+		dto.setLastUpdated(group.getLastUpdated());
+		dto.setOperationsCenter(group.getOperationsCenter());
+		
+		List<String> playerIds = new ArrayList<>();
+		
+		for(ObjectId id : group.getPlayers()){
+			playerIds.add(id.toString());
+		}
+		
+		dto.setPlayers(playerIds);
+		return dto;
+	}
+	
     public static PlayerDto player(Player createdPlayer) {
         
         PlayerDto player = new PlayerDto();
@@ -32,6 +52,7 @@ public class Converter {
         player.setPlayingSince(createdPlayer.getPlayingSince());
         player.setLastDayPlayed(createdPlayer.getLastDayPlayed());
         player.setActive(createdPlayer.getActive());
+        player.setGroupId(createdPlayer.getGroup());
         return player;
     }
 
