@@ -53,6 +53,7 @@ public class PlayerServiceImpl implements PlayerService{
             String id,
             String name, 
             String username, 
+            String groupId,
             String totalGoals, 
             String assists, 
             String totalGames,
@@ -61,7 +62,7 @@ public class PlayerServiceImpl implements PlayerService{
         
         System.out.println("Updating player with id : " + id);
         
-        return playerRepository.updatePlayer(id, name, username, 
+        return playerRepository.updatePlayer(id, name, username, groupId,
                 totalGoals, assists, totalGames, effectiveness, lastDayPlayed);
     }
     

@@ -10,6 +10,7 @@ public interface PlayerRepositoryCustom {
     
     List<PlayerDto> search(String name, String username, boolean active);
     
-    Player updatePlayer(String id, String name, String username, String totalGoals, String assists,
+    Player updatePlayer(String id, String name, String username, String groupId, 
+    		String totalGoals, String assists,
             String totalGames, String effectiveness, String lastDayPlayed);
 }

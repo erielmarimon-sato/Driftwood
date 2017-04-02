@@ -17,7 +17,7 @@ public interface PlayerService {
     PlayerDto getPlayer(String id) throws Exception;
 
     Player updatePlayer(
-            String id, String name, String username, String totalGoals, 
+            String id, String name, String username, String groupId, String totalGoals, 
             String assists, String totalGames, String effectiveness, 
             String lastDayPlayed);
     

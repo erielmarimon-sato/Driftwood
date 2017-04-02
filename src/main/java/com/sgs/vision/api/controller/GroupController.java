@@ -39,7 +39,7 @@ public class GroupController {
     	return response;
     }
     
-	@RequestMapping(value="/groups/{id}", method=RequestMethod.PUT)
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
 	public JsonResponse addPlayer(
 			@PathVariable String id,
 			@RequestParam(required=true) String[] playerIds){

@@ -63,6 +63,7 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
             String id, 
             String name, 
             String username, 
+            String groupId,
             String totalGoals, 
             String assists,
             String totalGames, 
@@ -76,6 +77,7 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
         
         if(name != null){update.set("name", name);}
         if(username != null){update.set("username", username);}
+        if(groupId != null){update.set("groupId", new ObjectId(groupId));}
         if(totalGoals != null){update.set("totalGoals", totalGoals);}
         if(assists != null){update.set("assists", assists);}
         if(totalGames != null){update.set("totalGames", totalGames);}

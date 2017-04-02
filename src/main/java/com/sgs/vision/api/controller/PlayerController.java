@@ -26,6 +26,7 @@ public class PlayerController {
             @RequestParam(required=true) String id,
             @RequestParam(required=false) String name,
             @RequestParam(required=false) String username,
+            @RequestParam(required=false) String groupId,
             @RequestParam(required=false) String totalGoals,
             @RequestParam(required=false) String assists,
             @RequestParam(required=false) String totalGames,
@@ -34,7 +35,7 @@ public class PlayerController {
         
         JsonResponse response = new JsonResponse();
         response.setData(Converter.player(playerService.updatePlayer(id, name, username, 
-                totalGoals, assists, totalGames, effectiveness, lastDayPlayed)));
+        		groupId, totalGoals, assists, totalGames, effectiveness, lastDayPlayed)));
         return response;
     }
     
