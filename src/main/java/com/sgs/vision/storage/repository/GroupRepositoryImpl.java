@@ -22,6 +22,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
+import com.sgs.vision.common.dto.GroupDto;
 import com.sgs.vision.storage.model.Game;
 import com.sgs.vision.storage.model.Group;
 import com.sgs.vision.storage.model.Player;
@@ -36,12 +37,12 @@ public class GroupRepositoryImpl implements GroupRepositoryCustom{
 	}
 
 	@Override
-	public Group search(String id) {
+	public GroupDto search(String id) {
 		List<AggregationOperation> criteria = new ArrayList<>();
 		
 		criteria.add(match(Criteria.where("_id").is(new ObjectId(id))));
 		TypedAggregation<Group> aggregation = newAggregation(Group.class,criteria);
-		AggregationResults<Group> result = mongoTemplate.aggregate(aggregation, Group.class);
+		AggregationResults<GroupDto> result = mongoTemplate.aggregate(aggregation, GroupDto.class);
 		
 		return result.getMappedResults().get(0);
 	}

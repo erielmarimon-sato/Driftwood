@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class GroupDto {
 
-	private String _id;
+	private String id;
 	private Date dateCreated;
 	private Date lastUpdated;
 	private List<String> players;
@@ -20,11 +20,11 @@ public class GroupDto {
 	private String admin;
 	
 	
-	public String get_id() {
-		return _id;
+	public String getId() {
+		return id;
 	}
-	public void set_id(String _id) {
-		this._id = _id.toString();
+	public void setId(String id) {
+		this.id = id;
 	}
 	public Date getDateCreated() {
 		return dateCreated;

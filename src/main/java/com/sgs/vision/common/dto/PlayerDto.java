@@ -10,13 +10,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class PlayerDto {
     
-    private ObjectId _id;
-//    private String id;
-//    private String playerId;
+    private String id;
     private String name;
     private String username;
     private String password;
-    private ObjectId groupId;
+    private String groupId;
     private Integer totalGoals;
     private Integer totalAssists;
     private Integer noShow;
@@ -25,13 +23,7 @@ public class PlayerDto {
     private Date playingSince;
     private Date lastDayPlayed;
     private boolean active;
-    
-//    public String getId() {
-//        return id;
-//    }
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+   
     public String getName() {
         return name;
     }
@@ -93,10 +85,10 @@ public class PlayerDto {
         this.lastDayPlayed = lastDayPlayed;
     }
     public String get_id() {
-        return _id.toString();
+        return id;
     }
-    public void set_id(ObjectId id) {
-        this._id = id;
+    public void set_id(String id) {
+        this.id = id;
     }
     public boolean isActive() {
         return active;
@@ -105,9 +97,10 @@ public class PlayerDto {
         this.active = active;
     }
 	public String getGroupId() {
-		return groupId.toString();
+		System.out.println("The Id");
+		return groupId;
 	}
-	public void setGroupId(ObjectId groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}
 

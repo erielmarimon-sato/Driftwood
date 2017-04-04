@@ -43,8 +43,7 @@ public class GroupServiceImpl implements GroupService{
 
 	@Override
 	public GroupDto getGroup(String id) {
-		Group g = groupRepository.search(id);
-		return Converter.group(g);
+		return groupRepository.search(id);
 	}
 
 	@Override

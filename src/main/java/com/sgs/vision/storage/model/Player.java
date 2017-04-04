@@ -12,7 +12,6 @@ public class Player {
     @Id
     private ObjectId id;
     private String name;
-//    @Indexed(unique=true)
     private String username;
     private String password;
     private ObjectId groupId;

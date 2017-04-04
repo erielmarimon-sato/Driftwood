@@ -10,22 +10,21 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
 public class GameDto {
-    private String _id;
+    private String id;
     private Date date;
     private List<String> teamOne;
     private List<String> teamTwo;
     private List<String> players;
     private Integer teamOneScore;
     private Integer teamTwoScore;
-//    private List<ScoreDetails> scores;
     private String mVP;
     private String gameType;
     
-    public String get_id() {
-        return _id.toString();
+    public String getId() {
+        return id.toString();
     }
-    public void set_id(ObjectId _id) {
-        this._id = _id.toString();
+    public void setId(String id) {
+        this.id = id;
     }
     public Date getDate() {
         return date;

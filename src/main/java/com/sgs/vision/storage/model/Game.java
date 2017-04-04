@@ -26,9 +26,9 @@ public class Game {
         return id;
     }
     
-//    public void setId(ObjectId id){
-//      this.id = id;    
-//    }
+    public void setId(ObjectId id){
+      this.id = id;    
+    }
     
     public Date getDate() {
         return date;

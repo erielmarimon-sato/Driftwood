@@ -42,19 +42,26 @@ public class PlayerRepositoryImpl implements PlayerRepositoryCustom{
     }
 
     @Override
-    public List<PlayerDto> search(String name, String username, boolean active) {
+    public List<PlayerDto> search(String name, String username, String groupId, boolean active) {
         List<AggregationOperation> criteria = new ArrayList<>();
         
         if(name != null){
 	    		criteria.add(match(Criteria.where("name").regex(name,"i")));
 	    }
+        
         if(username != null){
         		criteria.add(match(Criteria.where("username").regex(username,"i")));
 	    }
+        
+        if(groupId != null){
+    		criteria.add(match(Criteria.where("groupId").is(new ObjectId(groupId))));
+        }
+        
         criteria.add(match(Criteria.where("active").is(active)));
         
         TypedAggregation<Player> aggregation = newAggregation(Player.class,criteria);
         AggregationResults<PlayerDto> result = mongoTemplate.aggregate(aggregation, PlayerDto.class);
+        
         return result.getMappedResults();
     }
 
