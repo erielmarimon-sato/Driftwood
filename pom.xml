@@ -195,6 +195,7 @@
 			<artifactId>postgresql</artifactId>
 			<version>${postgres.connector.version}</version>
 		</dependency>
+
 		 <dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
@@ -294,7 +295,13 @@
 		    <artifactId>cors-filter</artifactId>
 		    <version>${cors.version}</version>
 		</dependency>
-		
+
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+		</dependency>
+
 	</dependencies>
 	<repositories>
 	    <repository>

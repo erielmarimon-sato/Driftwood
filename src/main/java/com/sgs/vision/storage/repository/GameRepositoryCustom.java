@@ -3,7 +3,9 @@ package com.sgs.vision.storage.repository;
 import java.util.Date;
 import java.util.List;
 
+import com.mongodb.DBObject;
 import com.sgs.vision.common.dto.GameDto;
+import com.sgs.vision.common.dto.PlayerDto;
 import com.sgs.vision.storage.model.Game;
 
 public interface GameRepositoryCustom {
@@ -24,4 +26,6 @@ public interface GameRepositoryCustom {
     
     Game updateGame(String id, Date date, Integer teamOneScore, 
             Integer teamTwoScore, String mVP, String gameType);
+    
+	List<DBObject> getPlayers(String gameId);
 }

@@ -1,5 +1,7 @@
 package com.sgs.vision.api.service;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +10,11 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sgs.vision.common.dto.GameDto;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.mongodb.DBObject;
+import com.sgs.vision.api.util.Converter;
+import com.sgs.vision.common.dto.PlayerDto;
 import com.sgs.vision.storage.model.Game;
 import com.sgs.vision.storage.repository.GameRepository;
 
@@ -95,6 +101,17 @@ public class GameServiceImpl implements GameService{
                 teamTwoScore,mVP,gameType);
     }
 
-    
-
+	@Override
+	public List<PlayerDto> getPlayers(String gameId) 
+			throws JsonParseException, JsonMappingException, IOException, ParseException {
+		List<DBObject> objects = gameRepository.getPlayers(gameId);
+		
+		List<PlayerDto> players = new ArrayList<>();
+		
+		for(DBObject object : objects){
+			players.add(Converter.player(object));
+		}
+		
+		return players;
+	}
 }

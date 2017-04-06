@@ -2,14 +2,14 @@ package com.sgs.vision.common.dto;
 
 import java.util.Date;
 
-import org.bson.types.ObjectId;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
 public class PlayerDto {
-    
+	
+	@JsonProperty("_id")
     private String id;
     private String name;
     private String username;
@@ -24,6 +24,13 @@ public class PlayerDto {
     private Date lastDayPlayed;
     private boolean active;
    
+    public String getGroupId() {
+		System.out.println("The Id");
+		return groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
     public String getName() {
         return name;
     }
@@ -84,10 +91,10 @@ public class PlayerDto {
     public void setLastDayPlayed(Date lastDayPlayed) {
         this.lastDayPlayed = lastDayPlayed;
     }
-    public String get_id() {
+    public String getId() {
         return id;
     }
-    public void set_id(String id) {
+    public void setId(String id) {
         this.id = id;
     }
     public boolean isActive() {
@@ -96,12 +103,5 @@ public class PlayerDto {
     public void setActive(boolean active) {
         this.active = active;
     }
-	public String getGroupId() {
-		System.out.println("The Id");
-		return groupId;
-	}
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
 
 }
