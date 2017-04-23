@@ -1,0 +1,68 @@
+20-Apr-2017 16:57:17.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.24
+20-Apr-2017 16:57:17.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jul 1 2015 20:19:55 UTC
+20-Apr-2017 16:57:17.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.24.0
+20-Apr-2017 16:57:17.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.9.13-moby
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-oracle/jre
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_25-b17
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /opt/tomcat
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /opt/tomcat
+20-Apr-2017 16:57:17.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/opt/tomcat/conf/logging.properties
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/opt/tomcat/endorsed
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/opt/tomcat
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/opt/tomcat
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/opt/tomcat/temp
+20-Apr-2017 16:57:17.520 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+20-Apr-2017 16:57:17.680 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+20-Apr-2017 16:57:17.699 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Apr-2017 16:57:17.703 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+20-Apr-2017 16:57:17.704 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Apr-2017 16:57:17.705 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 635 ms
+20-Apr-2017 16:57:17.733 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+20-Apr-2017 16:57:17.733 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.24
+20-Apr-2017 16:57:17.777 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /opt/tomcat/webapps/CoreServices.war
+20-Apr-2017 16:57:24.263 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+20-Apr-2017 16:57:31.850 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /opt/tomcat/webapps/CoreServices.war has finished in 14,072 ms
+20-Apr-2017 16:57:31.852 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /opt/tomcat/webapps/classes
+20-Apr-2017 16:57:31.891 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/tomcat/webapps/classes has finished in 39 ms
+20-Apr-2017 16:57:31.892 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /opt/tomcat/webapps/generated-sources
+20-Apr-2017 16:57:31.933 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/tomcat/webapps/generated-sources has finished in 42 ms
+20-Apr-2017 16:57:31.934 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /opt/tomcat/webapps/maven-archiver
+20-Apr-2017 16:57:31.968 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/tomcat/webapps/maven-archiver has finished in 34 ms
+20-Apr-2017 16:57:31.969 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /opt/tomcat/webapps/test-classes
+20-Apr-2017 16:57:32.004 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/tomcat/webapps/test-classes has finished in 36 ms
+20-Apr-2017 16:57:32.019 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+20-Apr-2017 16:57:32.033 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+20-Apr-2017 16:57:32.034 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 14329 ms
+20-Apr-2017 17:48:46.759 INFO [Thread-9] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+20-Apr-2017 17:48:46.811 INFO [Thread-9] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+20-Apr-2017 17:48:46.862 INFO [Thread-9] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+20-Apr-2017 17:48:47.172 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CoreServices] appears to have started a thread named [cluster-1-db:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(ServerMonitor.java:178)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.waitForNext(ServerMonitor.java:159)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.run(ServerMonitor.java:125)
+ java.lang.Thread.run(Thread.java:745)
+20-Apr-2017 17:48:47.174 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CoreServices] appears to have started a thread named [MongoCleaner438035845] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.mongodb.Mongo$CursorCleanerThread.run(Mongo.java:796)
+20-Apr-2017 17:48:47.175 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CoreServices] appears to have started a thread named [cluster-2-db:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(ServerMonitor.java:178)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.waitForNext(ServerMonitor.java:159)
+ com.mongodb.ServerMonitor$ServerMonitorRunnable.run(ServerMonitor.java:125)
+ java.lang.Thread.run(Thread.java:745)
+20-Apr-2017 17:48:47.178 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CoreServices] appears to have started a thread named [MongoCleaner1916423198] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.mongodb.Mongo$CursorCleanerThread.run(Mongo.java:796)
+20-Apr-2017 17:48:47.255 INFO [Thread-9] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+20-Apr-2017 17:48:47.259 INFO [Thread-9] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+20-Apr-2017 17:48:47.343 INFO [Thread-9] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+20-Apr-2017 17:48:47.344 INFO [Thread-9] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

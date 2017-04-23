@@ -1,7 +1,9 @@
 package com.sgs.vision.api.service;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,9 +26,11 @@ public class GameServiceImpl implements GameService{
     @Autowired private GameRepository gameRepository;
     
     @Override
-    public Game createGame(String[] playerIds, String gameType) {
-        Game newGame = new Game();
-        newGame.setDate(new Date());
+    public Game createGame(String[] playerIds, String gameType, String date, String time) throws ParseException {
+    	
+    	Game newGame = new Game();
+        newGame.setDate(date);
+        newGame.setTime(time);
         newGame.setTeamOne(null);
         newGame.setTeamTwo(null);
         

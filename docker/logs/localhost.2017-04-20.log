@@ -1,0 +1,3 @@
+20-Apr-2017 16:57:24.318 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log 1 Spring WebApplicationInitializers detected on classpath
+20-Apr-2017 16:57:24.525 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+20-Apr-2017 17:48:47.120 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'

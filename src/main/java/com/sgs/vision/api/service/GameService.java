@@ -13,7 +13,7 @@ import com.sgs.vision.storage.model.Game;
 
 public interface GameService {
 
-    Game createGame(String[] playerIds, String gameType);
+    Game createGame(String[] playerIds, String gameType, String date, String time) throws ParseException;
 
     List<Game> getGames(Date date);
 

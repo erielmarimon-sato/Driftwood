@@ -70,6 +70,8 @@ public class PlayerController {
     		@RequestParam(required=false) String username,
     		@RequestParam(required=false) String groupId,
     		@RequestParam(required=true, defaultValue="true") boolean active){
+    		
+    		System.out.println(name);
     	
 	        JsonResponse response = new JsonResponse();
 	        List<PlayerDto> players = playerService.search(name, username, groupId, active);

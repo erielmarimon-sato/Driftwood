@@ -101,25 +101,28 @@ public class GameController {
         return response;
     }
     
-    @RequestMapping(value = "/players", method = RequestMethod.PUT)
-    public JsonResponse addPlayers(@RequestParam(required=true) String gameId,
+    @RequestMapping(value = "/{id}/players", method = RequestMethod.PUT)
+    public JsonResponse addPlayers(@PathVariable(required=true) String id,
             @RequestParam(required=true) String[] playerIds) throws Exception{
         
         JsonResponse response = new JsonResponse();
         
         response.setData(Converter.game(
-                gameService.addPlayers(gameId, playerIds)));
+                gameService.addPlayers(id, playerIds)));
         
         return response;
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public JsonResponse create(@RequestParam(required=true) String[] playerIds,
-            @RequestParam(required=false) String gameType) throws Exception{
+    public JsonResponse create(
+    		@RequestParam(required=true) String[] playerIds,
+            @RequestParam(required=false) String gameType,
+            @RequestParam(required=false) String date,
+            @RequestParam(required=false) String time) throws Exception{
         
         JsonResponse response = new JsonResponse();
         response.setData(Converter.game(
-                gameService.createGame(playerIds, gameType)));
+                gameService.createGame(playerIds, gameType, date, time)));
         return response;
     }
     

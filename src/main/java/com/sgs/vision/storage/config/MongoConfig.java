@@ -51,7 +51,8 @@ public class MongoConfig extends AbstractMongoConfiguration {
 		ServerAddress serverAddress = new ServerAddress(hostName,portNumber);
 		
 		//return new MongoClient(hostName,portNumber);
-		return new MongoClient(serverAddress,credentials);
+		// return new MongoClient(serverAddress,credentials);
+		return new MongoClient(serverAddress);
 	}
 
 	@Override

@@ -11,7 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Game {
     @Id
     private ObjectId id;
-    private Date date;
+    private String date;
+    private String time;
     private List<ObjectId> teamOne;
     private List<ObjectId> teamTwo;
     private List<ObjectId> players;
@@ -30,10 +31,10 @@ public class Game {
       this.id = id;    
     }
     
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
     public Integer getTeamOneScore() {
@@ -79,4 +80,12 @@ public class Game {
     public void setmVP(ObjectId mVP) {
         this.mVP = mVP;
     }
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 }
